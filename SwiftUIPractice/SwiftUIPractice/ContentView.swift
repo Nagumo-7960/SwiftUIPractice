@@ -10,17 +10,19 @@ import SwiftUI
 struct ContentView: View {
     @State var text = "Hello, world!"
     var body: some View {
-        VStack {
-            Text(text)
-                .padding()
-            Button("ボタン"){
-                print("ボタンが押された")
-                text = "Hello, SwiftUI!"
+    
+            NavigationView{
+                VStack{
+                    Text("画面1")
+                    NavigationLink(destination: SecondView().navigationTitle("画面2")){
+                        Text("画面2へ")
+                    }
+                }
+                .navigationTitle("画面1")
             }
         }
-        .padding()
     }
-}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
