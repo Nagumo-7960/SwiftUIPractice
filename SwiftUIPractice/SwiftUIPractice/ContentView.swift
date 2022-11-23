@@ -14,11 +14,13 @@ struct ContentView: View {
             NavigationView{
                 VStack{
                     Text("画面1")
-                    .navigationTitle("画面1")
+                    NavigationLink(destination: SecondView().navigationTitle("画面2")){
+                        Text("画面2へ")
+                    }
                 }
+                .navigationTitle("画面1")
             }
         }
-        .padding()
     }
 
 
