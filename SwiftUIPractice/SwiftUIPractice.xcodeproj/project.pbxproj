@@ -14,6 +14,7 @@
 		9B137F2D292D16FA00935B09 /* SwiftUIPracticeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B137F2C292D16FA00935B09 /* SwiftUIPracticeTests.swift */; };
 		9B137F37292D16FA00935B09 /* SwiftUIPracticeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B137F36292D16FA00935B09 /* SwiftUIPracticeUITests.swift */; };
 		9B137F39292D16FA00935B09 /* SwiftUIPracticeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B137F38292D16FA00935B09 /* SwiftUIPracticeUITestsLaunchTests.swift */; };
+		9B725A47292E693A00D7D08C /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B725A46292E693A00D7D08C /* SecondView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		9B137F32292D16FA00935B09 /* SwiftUIPracticeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftUIPracticeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B137F36292D16FA00935B09 /* SwiftUIPracticeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeUITests.swift; sourceTree = "<group>"; };
 		9B137F38292D16FA00935B09 /* SwiftUIPracticeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIPracticeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9B725A46292E693A00D7D08C /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				9B137F1D292D16F900935B09 /* ContentView.swift */,
 				9B137F1F292D16FA00935B09 /* Assets.xcassets */,
 				9B137F21292D16FA00935B09 /* Preview Content */,
+				9B725A46292E693A00D7D08C /* SecondView.swift */,
 			);
 			path = SwiftUIPractice;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B725A47292E693A00D7D08C /* SecondView.swift in Sources */,
 				9B137F1E292D16F900935B09 /* ContentView.swift in Sources */,
 				9B137F1C292D16F900935B09 /* SwiftUIPracticeApp.swift in Sources */,
 			);
