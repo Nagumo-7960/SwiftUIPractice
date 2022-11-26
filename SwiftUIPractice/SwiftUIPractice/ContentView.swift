@@ -14,6 +14,10 @@ struct ContentView: View {
             Button(action: {
                 print("おみくじを引いた")}){
                     Text("おみくじを引く")
+                        .padding()
+                        .background(.orange)
+                        .foregroundColor(.black)
+                        .cornerRadius(10)
                 }
         }
     }
