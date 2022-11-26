@@ -9,13 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     @State var result = ["大吉", "中吉", "吉", "凶"]
+    @State var rondomNumber = 0
     var body: some View {
         VStack{
-            Text(result.first!).font(.largeTitle)
+            Text(result[rondomNumber]).font(.largeTitle)
                 .padding()
             
             Button(action: {
-                print("おみくじを引いた")}){
+                print("おみくじを引いた")
+                rondomNumber = Int.random(in: 0...result.count-1)
+                
+            }){
                     Text("おみくじを引く")
                         .padding()
                         .background(.orange)
