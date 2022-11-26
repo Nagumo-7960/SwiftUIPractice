@@ -8,21 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var text = "Hello, world!"
+    @State var result = ["大吉", "中吉", "吉", "凶"]
+    @State var rondomNumber = 0
     var body: some View {
-    
-            NavigationView{
-                VStack{
-                    Text("画面1")
+        VStack{
+            Text(result[rondomNumber]).font(.largeTitle)
+                .padding()
+            
+            Button(action: {
+                print("おみくじを引いた")
+                rondomNumber = Int.random(in: 0...result.count-1)
+                
+            }){
+                    Text("おみくじを引く")
                         .padding()
-                    NavigationLink(destination: SecondView().navigationTitle("画面2")){
-                        Text("画面2へ")
-                    }
+                        .background(.orange)
+                        .foregroundColor(.black)
+                        .cornerRadius(10)
                 }
-                .navigationTitle("画面1")
-            }
         }
     }
+}
 
 
 struct ContentView_Previews: PreviewProvider {
