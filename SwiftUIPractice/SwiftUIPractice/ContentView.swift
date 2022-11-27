@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var result = ["大吉", "中吉", "吉","小吉","末吉", "凶", "大凶"]
+    @State var result = ["おみくじ", "大吉", "中吉", "吉","小吉","末吉", "凶", "大凶"]
     @State var rondomNumber = 0
     var body: some View {
         VStack{
@@ -17,7 +17,7 @@ struct ContentView: View {
             
             Button(action: {
                 print("おみくじを引いた")
-                rondomNumber = Int.random(in: 0...result.count-1)
+                rondomNumber = Int.random(in: 1...result.count-1)
                 
             }){
                     Text("おみくじを引く")
