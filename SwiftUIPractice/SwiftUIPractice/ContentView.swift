@@ -30,7 +30,7 @@ struct ContentView: View {
                         .cornerRadius(10)
                 
                         .sheet(isPresented: $isShowSecondView){
-                            SecondView()
+                            SecondView(isShowSecondView: $isShowSecondView)
                         }
                 }
         }

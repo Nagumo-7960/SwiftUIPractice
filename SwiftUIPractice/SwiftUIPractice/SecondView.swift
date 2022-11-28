@@ -8,16 +8,22 @@
 import SwiftUI
 
 struct SecondView: View {
+    @Binding var isShowSecondView:Bool
     var body: some View {
         ZStack{
             Color(.red)
-            Text("画面を遷移した")
+            Button(action:{
+                isShowSecondView = false
+            }){
+                Text("戻る")
+                    .padding()
+            }
         }
     }
 }
 
-struct SecondView_Previews: PreviewProvider {
-    static var previews: some View {
-        SecondView()
-    }
-}
+//struct SecondView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SecondView()
+//    }
+//}
