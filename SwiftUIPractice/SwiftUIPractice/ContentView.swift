@@ -9,17 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     let result = ["おみくじ", "大吉", "中吉", "吉","小吉","末吉", "凶", "大凶"]
-    @State var rondomNumber = 0
+    @State var randomNumber = 0
     @State var isShowSecondView = false
     
     var body: some View {
         VStack{
-            Text(result[rondomNumber]).font(.largeTitle)
+            Text(result[randomNumber]).font(.largeTitle)
                 .padding()
             
             Button(action: {
                 print("おみくじを引いた")
-                rondomNumber = Int.random(in: 1...result.count-1)
+                randomNumber = Int.random(in: 1...result.count-1)
                 isShowSecondView = true
                 
             }){
@@ -30,7 +30,7 @@ struct ContentView: View {
                         .cornerRadius(10)
                 
                         .sheet(isPresented: $isShowSecondView){
-                            SecondView(isShowSecondView: $isShowSecondView)
+                            SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
                         }
                 }
         }

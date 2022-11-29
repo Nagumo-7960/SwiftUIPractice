@@ -9,9 +9,12 @@ import SwiftUI
 
 struct SecondView: View {
     @Binding var isShowSecondView:Bool
+    var omikujiResult:String
     var body: some View {
         ZStack{
-            Color(.red)
+            Text(omikujiResult)
+                .font(.largeTitle)
+                .padding()
             Button(action:{
                 isShowSecondView = false
             }){
