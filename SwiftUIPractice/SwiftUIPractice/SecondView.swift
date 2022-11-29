@@ -11,7 +11,7 @@ struct SecondView: View {
     @Binding var isShowSecondView:Bool
     var omikujiResult:String
     var body: some View {
-        ZStack{
+        VStack{
             Text(omikujiResult)
                 .font(.largeTitle)
                 .padding()

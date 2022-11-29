@@ -14,9 +14,6 @@ struct ContentView: View {
     
     var body: some View {
         VStack{
-            Text(result[randomNumber]).font(.largeTitle)
-                .padding()
-            
             Button(action: {
                 print("おみくじを引いた")
                 randomNumber = Int.random(in: 1...result.count-1)
