@@ -12,7 +12,14 @@ struct ContentView: View {
     @State var randomNumber = 0
     @State var isShowSecondView = false
     
+
+    
     var body: some View {
+        
+        let bounds = UIScreen.main.bounds
+        let width = CGFloat(bounds.width)
+        let height = CGFloat(bounds.height)
+        
         VStack{
             Button(action: {
                 print("おみくじを引いた")
@@ -22,6 +29,7 @@ struct ContentView: View {
             }){
                     Text("おみくじを引く")
                         .padding()
+                        .frame(width: width-50, height: width/2)
                         .background(.orange)
                         .foregroundColor(.black)
                         .cornerRadius(10)
