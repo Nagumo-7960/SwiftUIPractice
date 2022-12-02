@@ -29,7 +29,7 @@ struct ContentView: View {
             }){
                     Text("おみくじを引く")
                         .padding()
-                        .frame(width: width-50, height: width/2)
+                        .frame(width: width-50, height: width/4)
                         .background(.orange)
                         .foregroundColor(.black)
                         .cornerRadius(10)
