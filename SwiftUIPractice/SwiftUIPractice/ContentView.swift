@@ -27,7 +27,7 @@ struct ContentView: View {
                 isShowSecondView = true
                 
             }){
-                    Text("おみくじを引く")
+                Text("おみくじを引く").font(.largeTitle)
                         .padding()
                         .frame(width: width-50, height: width/4)
                         .background(.orange)
