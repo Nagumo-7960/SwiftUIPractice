@@ -12,7 +12,7 @@ struct ContentView: View {
     @State var randomNumber = 0
     @State var isShowSecondView = false
     
-
+    
     
     var body: some View {
         
@@ -21,6 +21,11 @@ struct ContentView: View {
         let height = CGFloat(bounds.height)
         
         VStack{
+            Image(systemName: "hand.thumbsup")
+            HStack{
+                Image(systemName: "hand.point.up")
+                Image(systemName: "hand.raised")
+            }
             Button(action: {
                 print("おみくじを引いた")
                 randomNumber = Int.random(in: 1...result.count-1)
@@ -28,16 +33,16 @@ struct ContentView: View {
                 
             }){
                 Text("おみくじを引く").font(.largeTitle)
-                        .padding()
-                        .frame(width: width-50, height: width/4)
-                        .background(.orange)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
+                    .padding()
+                    .frame(width: width-50, height: width/4)
+                    .background(.orange)
+                    .foregroundColor(.black)
+                    .cornerRadius(10)
                 
-                        .sheet(isPresented: $isShowSecondView){
-                            SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
-                        }
-                }
+                    .sheet(isPresented: $isShowSecondView){
+                        SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                    }
+            }
         }
     }
 }
