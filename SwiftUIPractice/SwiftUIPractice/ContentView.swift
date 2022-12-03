@@ -22,9 +22,21 @@ struct ContentView: View {
         
         VStack{
             Image(systemName: "hand.thumbsup")
+                .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width/5)
+                    .padding()
             HStack{
                 Image(systemName: "hand.point.up")
+                    .resizable()
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width/5)
+                        .padding()
                 Image(systemName: "hand.raised")
+                    .resizable()
+                        .scaledToFit()
+                        .frame(width: UIScreen.main.bounds.width/5)
+                        .padding()
             }
             Button(action: {
                 print("おみくじを引いた")
