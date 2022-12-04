@@ -21,40 +21,54 @@ struct ContentView: View {
         let height = CGFloat(bounds.height)
         
         VStack{
-            Image(systemName: "hand.thumbsup")
-                .resizable()
-                    .scaledToFit()
-                    .frame(width: UIScreen.main.bounds.width/5)
-                    .padding()
-            HStack{
-                Image(systemName: "hand.point.up")
-                    .resizable()
-                        .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width/5)
-                        .padding()
-                Image(systemName: "hand.raised")
-                    .resizable()
-                        .scaledToFit()
-                        .frame(width: UIScreen.main.bounds.width/5)
-                        .padding()
-            }
             Button(action: {
-                print("おみくじを引いた")
-                randomNumber = Int.random(in: 1...result.count-1)
-                isShowSecondView = true
-                
-            }){
-                Text("おみくじを引く").font(.largeTitle)
+                           isShowSecondView = true
+                       }){
+                           Image(systemName: "hand.thumbsup")
+                               .resizable()
+                                   .scaledToFit()
+                                   .frame(width: UIScreen.main.bounds.width/5)
+                                   .padding()
+                           
+                               .sheet(isPresented: $isShowSecondView){
+                                   SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                               }
+                       }
+            
+            HStack{
+                Button(action: {
+                               isShowSecondView = true
+                           }){
+                               Image(systemName: "hand.point.up")
+                                   .resizable()
+                                       .scaledToFit()
+                                       .frame(width: UIScreen.main.bounds.width/5)
+                                       .padding()
+                               
+                                   .sheet(isPresented: $isShowSecondView){
+                                       SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                                   }
+                           }
+
+                Button(action: {
+                               isShowSecondView = true
+                           }){
+                               Image(systemName: "hand.raised")
+                                   .resizable()
+                                       .scaledToFit()
+                                       .frame(width: UIScreen.main.bounds.width/5)
+                                       .padding()
+                               
+                                   .sheet(isPresented: $isShowSecondView){
+                                       SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                                   }
+                           }
+            }
+                Text("じゃんけんしよう").font(.largeTitle)
                     .padding()
                     .frame(width: width-50, height: width/4)
-                    .background(.orange)
                     .foregroundColor(.black)
-                    .cornerRadius(10)
-                
-                    .sheet(isPresented: $isShowSecondView){
-                        SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
-                    }
-            }
+            
         }
     }
 }
