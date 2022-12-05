@@ -9,12 +9,14 @@ import SwiftUI
 
 struct SecondView: View {
     @Binding var isShowSecondView:Bool
-    var omikujiResult:String
+    var myJankenHands:String
     var body: some View {
         VStack{
-            Text(omikujiResult)
-                .font(.largeTitle)
-                .padding()
+            Image(systemName: myJankenHands)
+                .resizable()
+                    .scaledToFit()
+                    .frame(width: UIScreen.main.bounds.width/5)
+                    .padding()
             Button(action:{
                 isShowSecondView = false
             }){

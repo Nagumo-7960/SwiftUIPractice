@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    let result = ["おみくじ", "大吉", "中吉", "吉","小吉","末吉", "凶", "大凶"]
+    let myJankenHands = ["hand.thumbsup", "hand.point.up", "hand.raised"]
     @State var randomNumber = 0
     @State var isShowSecondView = false
     
@@ -31,7 +31,7 @@ struct ContentView: View {
                                    .padding()
                            
                                .sheet(isPresented: $isShowSecondView){
-                                   SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                                   SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands[randomNumber])
                                }
                        }
             
@@ -46,7 +46,7 @@ struct ContentView: View {
                                        .padding()
                                
                                    .sheet(isPresented: $isShowSecondView){
-                                       SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                                       SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands[randomNumber])
                                    }
                            }
 
@@ -60,7 +60,7 @@ struct ContentView: View {
                                        .padding()
                                
                                    .sheet(isPresented: $isShowSecondView){
-                                       SecondView(isShowSecondView: $isShowSecondView, omikujiResult: result[randomNumber])
+                                       SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands[randomNumber])
                                    }
                            }
             }
