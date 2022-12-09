@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     let opposeJankenHands = ["hand.thumbsup", "hand.point.up", "hand.raised"]
+    @State var myJankenHands = ""
+    
     @State var randomNumber = 0
     @State var isShowSecondView = false
     
@@ -24,6 +26,7 @@ struct ContentView: View {
             Button(action: {
                            isShowSecondView = true
                 randomNumber = Int.random(in: 1...opposeJankenHands.count-1)
+                myJankenHands = "hand.thumbsup"
                        }){
                            Image(systemName: "hand.thumbsup")
                                .resizable()
@@ -32,7 +35,7 @@ struct ContentView: View {
                                    .padding()
                            
                                .sheet(isPresented: $isShowSecondView){
-                                   SecondView(isShowSecondView: $isShowSecondView, myJankenHands: "hand.thumbsup", opposeJankenHands: opposeJankenHands[randomNumber])
+                                   SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands, opposeJankenHands: opposeJankenHands[randomNumber])
                                }
                        }
             
@@ -40,6 +43,7 @@ struct ContentView: View {
                 Button(action: {
                                isShowSecondView = true
                     randomNumber = Int.random(in: 1...opposeJankenHands.count-1)
+                    myJankenHands = "hand.point.up"
                            }){
                                Image(systemName: "hand.point.up")
                                    .resizable()
@@ -48,13 +52,15 @@ struct ContentView: View {
                                        .padding()
                                
                                    .sheet(isPresented: $isShowSecondView){
-                                       SecondView(isShowSecondView: $isShowSecondView, myJankenHands: "hand.point.up", opposeJankenHands: opposeJankenHands[randomNumber])
+                                       SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands, opposeJankenHands: opposeJankenHands[randomNumber])
                                    }
                            }
 
                 Button(action: {
                                isShowSecondView = true
                     randomNumber = Int.random(in: 1...opposeJankenHands.count-1)
+                    myJankenHands = "hand.raised"
+                    
                            }){
                                Image(systemName: "hand.raised")
                                    .resizable()
@@ -63,7 +69,7 @@ struct ContentView: View {
                                        .padding()
                                
                                    .sheet(isPresented: $isShowSecondView){
-                                       SecondView(isShowSecondView: $isShowSecondView, myJankenHands: "hand.raised", opposeJankenHands: opposeJankenHands[randomNumber])
+                                       SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands, opposeJankenHands: opposeJankenHands[randomNumber])
                                    }
                            }
             }
