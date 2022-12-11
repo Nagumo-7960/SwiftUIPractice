@@ -10,12 +10,13 @@ import SwiftUI
 struct SecondView: View {
     @Binding var isShowSecondView:Bool
     var myJankenHands:String
-    var opposeJankenHands:String
+    let opposeJankenHands = ["hand.thumbsup", "hand.point.up", "hand.raised"]
+    
     var body: some View {
         VStack{
             Text("相手の手")
                 .padding(10)
-            Image(systemName: opposeJankenHands)
+            Image(systemName: opposeJankenHands.randomElement() ?? "")
                 .resizable()
                     .scaledToFit()
                     .frame(width: UIScreen.main.bounds.width/5)

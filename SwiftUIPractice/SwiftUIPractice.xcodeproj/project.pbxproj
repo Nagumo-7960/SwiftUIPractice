@@ -100,7 +100,6 @@
 				9B137F1D292D16F900935B09 /* ContentView.swift */,
 				9B137F1F292D16FA00935B09 /* Assets.xcassets */,
 				9B137F21292D16FA00935B09 /* Preview Content */,
-				9B725A46292E693A00D7D08C /* SecondView.swift */,
 			);
 			path = SwiftUIPractice;
 			sourceTree = "<group>";
@@ -109,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				9B137F22292D16FA00935B09 /* Preview Assets.xcassets */,
+				9B725A46292E693A00D7D08C /* SecondView.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
