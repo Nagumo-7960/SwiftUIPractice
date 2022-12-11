@@ -25,7 +25,7 @@ struct ContentView: View {
         VStack{
             Button(action: {
                            isShowSecondView = true
-                randomNumber = Int.random(in: 1...opposeJankenHands.count-1)
+                randomNumber = Int.random(in: 0...opposeJankenHands.count-1)
                 myJankenHands = "hand.thumbsup"
                        }){
                            Image(systemName: "hand.thumbsup")
@@ -42,7 +42,7 @@ struct ContentView: View {
             HStack{
                 Button(action: {
                                isShowSecondView = true
-                    randomNumber = Int.random(in: 1...opposeJankenHands.count-1)
+                    randomNumber = Int.random(in: 0...opposeJankenHands.count-1)
                     myJankenHands = "hand.point.up"
                            }){
                                Image(systemName: "hand.point.up")
@@ -58,7 +58,7 @@ struct ContentView: View {
 
                 Button(action: {
                                isShowSecondView = true
-                    randomNumber = Int.random(in: 1...opposeJankenHands.count-1)
+                    randomNumber = Int.random(in: 0...opposeJankenHands.count-1)
                     myJankenHands = "hand.raised"
                     
                            }){
