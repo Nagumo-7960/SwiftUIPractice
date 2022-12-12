@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SecondView: View {
     @Binding var isShowSecondView:Bool
-    var myJankenHands:String
+    @Binding var myJankenHands:String
     let opposeJankenHands = ["hand.thumbsup", "hand.point.up", "hand.raised"]
     
     var body: some View {

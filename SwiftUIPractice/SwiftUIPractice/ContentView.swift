@@ -9,13 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     let opposeJankenHands = ["hand.thumbsup", "hand.point.up", "hand.raised"]
-    @State var myJankenHands:String
+    @State var myJankenHands = ""
     @State var isShowSecondView = false
-    
-    init(){
-        _myJankenHands = State(initialValue: "")
-    }
-    
     
     var body: some View {
         
@@ -35,7 +30,7 @@ struct ContentView: View {
                     .padding()
                 
                     .sheet(isPresented: $isShowSecondView){
-                        SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands)
+                        SecondView(isShowSecondView: $isShowSecondView, myJankenHands: $myJankenHands)
                     }
             }
             
@@ -51,7 +46,7 @@ struct ContentView: View {
                         .padding()
                     
                         .sheet(isPresented: $isShowSecondView){
-                            SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands)
+                            SecondView(isShowSecondView: $isShowSecondView, myJankenHands: $myJankenHands)
                         }
                 }
                 
@@ -67,7 +62,7 @@ struct ContentView: View {
                         .padding()
                     
                         .sheet(isPresented: $isShowSecondView){
-                            SecondView(isShowSecondView: $isShowSecondView, myJankenHands: myJankenHands)
+                            SecondView(isShowSecondView: $isShowSecondView, myJankenHands: $myJankenHands)
                         }
                 }
             }
